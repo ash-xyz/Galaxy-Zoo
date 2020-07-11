@@ -8,7 +8,7 @@ TRAIN_LABEL_DIR = '../data/training_solutions_rev1.csv'
 TRAIN_IMAGES_DIR = '../data/images_training_rev1/'
 TEST_LABEL_DIR = '../data/all_zeros_benchmark.csv'
 TEST_IMAGES_DIR = '../data/images_test_rev1/'
-IMAGE_SHAPE = (256, 256, 3)
+IMAGE_SHAPE = (224, 224, 3)
 BATCH_SIZE = 32
 
 
@@ -63,5 +63,5 @@ def load_test_data():
         seed=42,
         shuffle=False,
         class_mode=None,
-        target_size=(256, 256))
+        target_size=(IMAGE_SHAPE[0], IMAGE_SHAPE[1]))
     return test_generator
