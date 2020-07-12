@@ -6,15 +6,19 @@ CLASSES = ['Class1.1', 'Class1.2', 'Class1.3', 'Class2.1', 'Class2.2', 'Class3.1
            ]
 TRAIN_LABEL_DIR = '../data/training_solutions_rev1.csv'
 TRAIN_IMAGES_DIR = '../data/images_training_rev1/'
-TEST_LABEL_DIR = '../data/all_zeros_benchmark.csv'
+TEST_LABEL_DIR = '../predictions/prediction_format.csv'
 TEST_IMAGES_DIR = '../data/images_test_rev1/'
 IMAGE_SHAPE = (224, 224, 3)
 BATCH_SIZE = 32
 
 
-def append_ext(fn):
+def append_ext(id):
     """Appends jpg to a number"""
-    return str(fn)+".jpg"
+    return str(id)+".jpg"
+
+
+def get_id(fname):
+    return fname.replace(".jpg", "")
 
 
 def load_train_data():

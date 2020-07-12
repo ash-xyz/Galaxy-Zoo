@@ -4,9 +4,11 @@ from model import create_model
 import matplotlib.pyplot as plt
 
 
-def train_model():
+def train_model(model_name):
     """Trains and saves a keras model
 
+    Args:
+        model_name: string
     Returns:
         model: Trained Model
         history: history of losses
@@ -20,8 +22,8 @@ def train_model():
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer, loss='mse', metrics="accuracy")
     history = model.fit(
-        x=train_generator, validation_data=valid_generator, epochs=1, steps_per_epoch=STEP_SIZE_TRAIN, validation_steps=STEP_SIZE_VALID)
-    model.save("../models/model_1")
+        x=train_generator, validation_data=valid_generator, epochs=25, steps_per_epoch=STEP_SIZE_TRAIN, validation_steps=STEP_SIZE_VALID)
+    model.save("../models/" + model_name)
     # Get training and test loss histories
     training_loss = history.history['loss']
     test_loss = history.history['val_loss']
@@ -35,9 +37,9 @@ def train_model():
     plt.legend(['Training Loss', 'Test Loss'])
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.savefig('loss.png')
+    plt.savefig('../images/loss.png')
 
     return model, history
 
 
-model, history = train_model()
+model, history = train_model("model_2")
