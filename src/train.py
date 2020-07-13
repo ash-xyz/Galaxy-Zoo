@@ -21,8 +21,12 @@ def train_model(model_name):
 
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
     model.compile(optimizer, loss='mse', metrics="accuracy")
+
+    # Define Callbacks
+    best_model = tf.keras.callbacks.ModelCheckpoint(
+        "../models/best_model", monitor="val_loss", save_best_only=True, mode="min")
     history = model.fit(
-        x=train_generator, validation_data=valid_generator, epochs=25, steps_per_epoch=STEP_SIZE_TRAIN, validation_steps=STEP_SIZE_VALID)
+        x=train_generator, validation_data=valid_generator, epochs=25, steps_per_epoch=STEP_SIZE_TRAIN, validation_steps=STEP_SIZE_VALID,callbacks=best_model)
     model.save("../models/" + model_name)
     # Get training and test loss histories
     training_loss = history.history['loss']
@@ -37,7 +41,7 @@ def train_model(model_name):
     plt.legend(['Training Loss', 'Test Loss'])
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.savefig('../images/loss.png')
+    plt.savefig('../images/loss_2.png')
 
     return model, history
 
