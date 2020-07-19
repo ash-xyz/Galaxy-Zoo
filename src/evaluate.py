@@ -17,7 +17,7 @@ def generate_results(model_name):
         test_gen, steps=test_gen.n / test_gen.batch_size)
     header = open('../predictions/prediction_format.csv', 'r').readlines()[0]
     
-    with open('../predictions/prediction_1.csv', 'w') as outfile:
+    with open('../predictions/prediction_2.csv', 'w') as outfile:
         outfile.write(header)
         for i in range(len(test_gen.filenames)):
             id_ = (get_id(test_gen.filenames[i]))
@@ -26,4 +26,4 @@ def generate_results(model_name):
             outfile.write(outline + "\n")
 
 
-generate_results("model_1")
+generate_results("best_model")
