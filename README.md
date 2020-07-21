@@ -9,4 +9,4 @@ Model 2: 0.11896
 
 NasnetMobile, Rotations of 180 degrees, vertical and horizontal flip, 90/10 split for training and validation data, learning rate = 0.001, 25 epochs, Adam optimizer
 
-Changed rotation to 90 degrees, MobileNetV2
+Changed rotation to 90 degrees, MobileNetV2, added fully connected layer with dropout, 95/5 split for training/validation data

@@ -12,6 +12,9 @@ def create_model():
     conv_net = tf.keras.applications.MobileNetV2(
         include_top=False, input_shape=IMAGE_SHAPE)
     neural_net = tf.keras.layers.Flatten()(conv_net.output)
+    neural_net = tf.keras.layers.Dropout(rate=0.5)(neural_net)
+    neural_net = tf.keras.layers.Dense(300, activation='RELU')(neural_net)
+    neural_net = tf.keras.layers.Dropout(rate=0.5)(neural_net)
     neural_net = tf.keras.layers.Dense(
         len(CLASSES), activation='sigmoid')(neural_net)
     model = tf.keras.Model(inputs=conv_net.inputs, outputs=neural_net)
