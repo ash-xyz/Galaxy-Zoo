@@ -33,7 +33,7 @@ def load_train_data():
     train_data["GalaxyID"] = train_data["GalaxyID"].apply(append_ext)
     # Generator
     generator = tf.keras.preprocessing.image.ImageDataGenerator(
-        rescale=1./255., validation_split=0.1,rotation_range=180,horizontal_flip=True,vertical_flip=True)
+        rescale=1./255., validation_split=0.05,rotation_range=90,horizontal_flip=True,vertical_flip=True)
     # Training Generator
     train_generator = generator.flow_from_dataframe(dataframe=train_data, directory=TRAIN_IMAGES_DIR, x_col="GalaxyID", y_col=CLASSES, subset="training", batch_size=BATCH_SIZE, seed=42,
                                                     shuffle=True,

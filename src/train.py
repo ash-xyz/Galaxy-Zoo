@@ -41,9 +41,9 @@ def train_model(model_name):
     plt.legend(['Training Loss', 'Test Loss'])
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.savefig('../images/loss_2.png')
+    plt.savefig('../images/loss_3.png')
 
     return model, history
 
 
-model, history = train_model("model_2")
+model, history = train_model("model_3")

@@ -9,7 +9,7 @@ def create_model():
         model: keras model
     """
     # Densenet Model
-    conv_net = tf.keras.applications.NASNetMobile(
+    conv_net = tf.keras.applications.MobileNetV2(
         include_top=False, input_shape=IMAGE_SHAPE)
     neural_net = tf.keras.layers.Flatten()(conv_net.output)
     neural_net = tf.keras.layers.Dense(
