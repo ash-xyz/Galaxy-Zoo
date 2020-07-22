@@ -1,7 +1,7 @@
 # Galaxy-Zoo
 Galaxy Zoo - The Galaxy Challenge
 
-<center><img src="images/Galaxy.jpg" width="400"/></center>
+![Galaxy](images/Galaxy.jpg)
 
 This is a quick Kaggle project based on the [Galaxy Zoo challenge](https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge). In total I trained 3 models using Tensorflow on my gtx 1080, each taking 4-6 hours to train.
 
@@ -16,7 +16,7 @@ This is a quick Kaggle project based on the [Galaxy Zoo challenge](https://www.k
 | Optimizer         | Adam          |
 | Epochs            | 25            |
 
-![Model 1 Loss](images/loss_model_1.png | width = 200)
+![Model 1 Loss](images/loss_model_1.png)
 
 ## Model 2
 *RMSE:* 0.11896
@@ -29,7 +29,7 @@ This is a quick Kaggle project based on the [Galaxy Zoo challenge](https://www.k
 | Optimizer         | Adam          |
 | Epochs            | 25            |
 
-![Model 2 Loss](images/loss_2 | width = 200)
+![Model 2 Loss](images/loss_2)
 
 ## Model 3
 *RMSE:* 0.11340
@@ -42,7 +42,7 @@ This is a quick Kaggle project based on the [Galaxy Zoo challenge](https://www.k
 | Optimizer         | Adam          |
 | Epochs            | 25            |
 
-![Model 3 Loss](images/loss_3 | width = 200)
+![Model 3 Loss](images/loss_3.png)
 
 ## Potential Improvements
 * Use a better directory structure.
