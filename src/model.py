@@ -13,7 +13,7 @@ def create_model():
         include_top=False, input_shape=IMAGE_SHAPE)
     neural_net = tf.keras.layers.Flatten()(conv_net.output)
     neural_net = tf.keras.layers.Dropout(rate=0.5)(neural_net)
-    neural_net = tf.keras.layers.Dense(300, activation='RELU')(neural_net)
+    neural_net = tf.keras.layers.Dense(300, activation='relu')(neural_net)
     neural_net = tf.keras.layers.Dropout(rate=0.5)(neural_net)
     neural_net = tf.keras.layers.Dense(
         len(CLASSES), activation='sigmoid')(neural_net)
