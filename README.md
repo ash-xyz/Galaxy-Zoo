@@ -45,6 +45,7 @@ This is a quick Kaggle project based on the [Galaxy Zoo challenge](https://www.k
 ![Model 3 Loss](images/loss_3.png)
 
 ## Potential Improvements
+* Decayed the Learning Rate
 * Use a better directory structure.
 * Find and read more academic papers relating to the topic.
 * Use a systematic way to debug the model.
